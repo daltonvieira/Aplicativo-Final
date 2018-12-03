@@ -79,17 +79,9 @@ public class MainActivity extends AppCompatActivity
 
             Intent intent = new Intent(MainActivity.this, Calculadora.class);
             startActivity(intent);
-        } else if (id == R.id.cadastro){
-            Intent it = new Intent(MainActivity.this, Cadastro1.class);
-            startActivity(it);
-
         } else if (id == R.id.chamadaFalsa){
             Intent it = new Intent(MainActivity.this, Simulador_Chamada.class);
             startActivity(it);
-        } else if (id == R.id.chamadaFalsa){
-            Intent it = new Intent(MainActivity.this, Simulador_Chamada.class);
-            startActivity(it);
-
         }
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);

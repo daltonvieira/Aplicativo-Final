@@ -1,5 +1,6 @@
 package com.lourdinas.finalaplication;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
@@ -10,24 +11,24 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Cadastro1 extends AppCompatActivity {
+public class Act_Login extends AppCompatActivity {
+
 
     SharedPreferences meusdados;
     public static final String mypreference = "call";
 
-    EditText email;
-    EditText senha;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro1);
+        setContentView(R.layout.activity_act__login);
+
+        meusdados = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
 
         TextView cadastra = findViewById(R.id.btn_Cadastrar);
         Button login = findViewById(R.id.btn_Login);
-        setContentView(R.layout.activity_main);
-        email = findViewById(R.id.edt_email);
-        senha = findViewById(R.id.edt_senha);
+
+        final EditText email = findViewById(R.id.edt_email);
+        final EditText senha = findViewById(R.id.edt_senha);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,22 +40,24 @@ public class Cadastro1 extends AppCompatActivity {
                     if(meuemail.equals(meusdados.getString("email", ""))
                             && minhasenha.equals(meusdados.getString("senha", ""))){
 
-                        Toast.makeText(getApplicationContext(), "Senha e email validos ", Toast.LENGTH_LONG).show();
+                        Intent ite = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(ite);
+                        finish();
+
                     }else{Toast.makeText(getApplicationContext(), "DEmail e senha invalidos  ", Toast.LENGTH_LONG).show();}
                 }else{
-                    Toast.makeText(getApplicationContext(), "Dados Invalidos ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Não exitem cadastros! ", Toast.LENGTH_LONG).show();
                 }
             }
         });
+
         cadastra.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent ite = new Intent(getApplicationContext(), Cadastro2.class);
-                startActivity(ite);
+                Intent it = new Intent(Act_Login.this, Act_Cadastro.class);
+                startActivity(it);
                 finish();
-
             }
         });
     }
 }
-

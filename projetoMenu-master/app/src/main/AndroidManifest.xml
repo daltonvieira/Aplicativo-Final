@@ -11,24 +11,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="Main Activity"
-            android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name=".Calculadora" />
+        <activity android:name=".Calciladora_Media" />
+        <activity android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".Simulador_Chamada" />
+        <activity android:name=".Multiplas_Telas" />
+        <activity android:name=".Multiplas_telas2" />
+        <activity android:name=".Multiplas_Telas3" />
+        <activity android:name=".Act_Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Calculadora" />
-        <activity android:name=".Calciladora_Media" />
-        <activity android:name=".Cadastro1" />
-        <activity android:name=".Cadastro2" />
-        <activity android:name=".Simulador_Chamada" />
-        <activity android:name=".Multiplas_Telas" />
-        <activity android:name=".Multiplas_telas2" />
-        <activity android:name=".Multiplas_Telas3"></activity>
+        <activity android:name=".Act_Cadastro"></activity>
     </application>
 
 </manifest>

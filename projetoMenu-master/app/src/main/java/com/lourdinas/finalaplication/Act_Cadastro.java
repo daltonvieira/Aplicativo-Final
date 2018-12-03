@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Cadastro2 extends AppCompatActivity {
+public class Act_Cadastro extends AppCompatActivity {
 
     SharedPreferences meusdados;
     public static final String mypreference = "call";
@@ -18,7 +18,7 @@ public class Cadastro2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastro2);
+        setContentView(R.layout.activity_act__cadastro);
 
         meusdados = getSharedPreferences(mypreference, Context.MODE_PRIVATE);
 
@@ -40,7 +40,7 @@ public class Cadastro2 extends AppCompatActivity {
                     editor.commit();
                     Toast.makeText(getApplicationContext(), "Dados Salvos ", Toast.LENGTH_LONG).show();
 
-                    Intent it = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent it = new Intent(getApplicationContext(), Act_Login.class);
                     startActivity(it);
                     finish();
 
@@ -54,4 +54,3 @@ public class Cadastro2 extends AppCompatActivity {
         });
     }
 }
-

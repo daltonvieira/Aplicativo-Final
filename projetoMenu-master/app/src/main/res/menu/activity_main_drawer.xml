@@ -20,9 +20,6 @@
             android:title="Multiplas Telas"
             android:icon="@drawable/ic_menu_perfil"/>
 
-        <item android:id="@+id/cadastro"
-            android:title="Cadastro"
-            android:icon="@drawable/ic_menu_perfil"/>
     </group>
 
     <item android:title="Configurações">
